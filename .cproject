@@ -24,7 +24,9 @@
 								<option id="com.atollic.truestudio.common_options.target.fpucore.179646486" name="FPU" superClass="com.atollic.truestudio.common_options.target.fpucore" value="None" valueType="enumerated"/>
 								<option id="com.atollic.truestudio.common_options.target.fpu.2114724211" name="Floating point" superClass="com.atollic.truestudio.common_options.target.fpu"/>
 								<option id="com.atollic.truestudio.as.symbols.defined.759221328" name="Defined symbols" superClass="com.atollic.truestudio.as.symbols.defined"/>
-								<option id="com.atollic.truestudio.as.general.incpath.1840477947" name="Include path" superClass="com.atollic.truestudio.as.general.incpath"/>
+								<option id="com.atollic.truestudio.as.general.incpath.1840477947" name="Include path" superClass="com.atollic.truestudio.as.general.incpath" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/nRFCmsisSTM32f0/Libraries/nrf2410}&quot;"/>
+								</option>
 								<inputType id="com.atollic.truestudio.as.input.1108275508" name="Input" superClass="com.atollic.truestudio.as.input"/>
 							</tool>
 							<tool id="com.atollic.truestudio.exe.debug.toolchain.gcc.108915249" name="C Compiler" superClass="com.atollic.truestudio.exe.debug.toolchain.gcc">
@@ -40,6 +42,10 @@
 									<listOptionValue builtIn="false" value="..\Libraries\CMSIS\Device\ST\STM32F0xx\Include"/>
 									<listOptionValue builtIn="false" value="..\Libraries\STM32F0xx_StdPeriph_Driver\inc"/>
 									<listOptionValue builtIn="false" value="..\Utilities\STM32F0-Discovery"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/nRFCmsisSTM32f0/Libraries/nrf2410}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/nRFCmsisSTM32f0/Libraries/uart}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/nRFCmsisSTM32f0/Libraries/spi}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/nRFCmsisSTM32f0/Libraries/timers}&quot;"/>
 								</option>
 								<option id="com.atollic.truestudio.common_options.target.endianess.1758987542" name="Endianess" superClass="com.atollic.truestudio.common_options.target.endianess"/>
 								<option id="com.atollic.truestudio.common_options.target.mcpu.517086215" name="Microcontroller" superClass="com.atollic.truestudio.common_options.target.mcpu" value="STM32F051R8" valueType="enumerated"/>
@@ -48,6 +54,7 @@
 								<option id="com.atollic.truestudio.common_options.target.fpu.1619554245" name="Floating point" superClass="com.atollic.truestudio.common_options.target.fpu"/>
 								<option id="com.atollic.truestudio.gcc.optimization.prep_garbage.1002335491" name="Prepare dead code removal " superClass="com.atollic.truestudio.gcc.optimization.prep_garbage" value="true" valueType="boolean"/>
 								<option id="com.atollic.truestudio.gcc.optimization.prep_data.2102750642" name="Prepare dead data removal" superClass="com.atollic.truestudio.gcc.optimization.prep_data" value="true" valueType="boolean"/>
+								<option id="com.atollic.truestudio.common_options.target.interwork.664123042" name="Mix ARM/Thumb" superClass="com.atollic.truestudio.common_options.target.interwork"/>
 								<inputType id="com.atollic.truestudio.gcc.input.1081855135" superClass="com.atollic.truestudio.gcc.input"/>
 							</tool>
 							<tool id="com.atollic.truestudio.exe.debug.toolchain.ld.1865301873" name="C Linker" superClass="com.atollic.truestudio.exe.debug.toolchain.ld">
@@ -134,7 +141,9 @@
 								<option id="com.atollic.truestudio.common_options.target.fpucore.1364157252" name="FPU" superClass="com.atollic.truestudio.common_options.target.fpucore" value="None" valueType="enumerated"/>
 								<option id="com.atollic.truestudio.common_options.target.fpu.289836548" name="Floating point" superClass="com.atollic.truestudio.common_options.target.fpu"/>
 								<option id="com.atollic.truestudio.as.symbols.defined.1715075458" name="Defined symbols" superClass="com.atollic.truestudio.as.symbols.defined"/>
-								<option id="com.atollic.truestudio.as.general.incpath.1211142525" name="Include path" superClass="com.atollic.truestudio.as.general.incpath"/>
+								<option id="com.atollic.truestudio.as.general.incpath.1211142525" name="Include path" superClass="com.atollic.truestudio.as.general.incpath" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/nRFCmsisSTM32f0/Libraries/nrf2410}&quot;"/>
+								</option>
 								<inputType id="com.atollic.truestudio.as.input.1284984191" name="Input" superClass="com.atollic.truestudio.as.input"/>
 							</tool>
 							<tool id="com.atollic.truestudio.exe.release.toolchain.gcc.280852752" name="C Compiler" superClass="com.atollic.truestudio.exe.release.toolchain.gcc">
@@ -150,6 +159,7 @@
 									<listOptionValue builtIn="false" value="..\Libraries\CMSIS\Device\ST\STM32F0xx\Include"/>
 									<listOptionValue builtIn="false" value="..\Libraries\STM32F0xx_StdPeriph_Driver\inc"/>
 									<listOptionValue builtIn="false" value="..\Utilities\STM32F0-Discovery"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/nRFCmsisSTM32f0/Libraries/nrf2410}&quot;"/>
 								</option>
 								<option id="com.atollic.truestudio.common_options.target.endianess.1944056835" name="Endianess" superClass="com.atollic.truestudio.common_options.target.endianess"/>
 								<option id="com.atollic.truestudio.common_options.target.mcpu.119412173" name="Microcontroller" superClass="com.atollic.truestudio.common_options.target.mcpu" value="STM32F051R8" valueType="enumerated"/>
@@ -158,6 +168,7 @@
 								<option id="com.atollic.truestudio.common_options.target.fpu.259227009" name="Floating point" superClass="com.atollic.truestudio.common_options.target.fpu"/>
 								<option id="com.atollic.truestudio.gcc.optimization.prep_garbage.1028544792" name="Prepare dead code removal " superClass="com.atollic.truestudio.gcc.optimization.prep_garbage" value="true" valueType="boolean"/>
 								<option id="com.atollic.truestudio.gcc.optimization.prep_data.1892560431" name="Prepare dead data removal" superClass="com.atollic.truestudio.gcc.optimization.prep_data" value="true" valueType="boolean"/>
+								<option id="com.atollic.truestudio.common_options.target.interwork.1256832120" name="Mix ARM/Thumb" superClass="com.atollic.truestudio.common_options.target.interwork"/>
 								<inputType id="com.atollic.truestudio.gcc.input.1319195644" superClass="com.atollic.truestudio.gcc.input"/>
 							</tool>
 							<tool id="com.atollic.truestudio.exe.release.toolchain.ld.2024924379" name="C Linker" superClass="com.atollic.truestudio.exe.release.toolchain.ld">
@@ -225,8 +236,15 @@
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
 		<project id="nRFCmsisSTM32f0.com.atollic.truestudio.exe.1686849723" name="Executable" projectType="com.atollic.truestudio.exe"/>
 	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="refreshScope"/>
 	<storageModule moduleId="scannerConfiguration">
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="com.atollic.truestudio.exe.debug.630476268;com.atollic.truestudio.exe.debug.630476268.;com.atollic.truestudio.exe.debug.toolchain.gcc.108915249;com.atollic.truestudio.gcc.input.1081855135">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.atollic.truestudio.mbs.ARMToolsPerProjectProfileC"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="com.atollic.truestudio.configuration.release.625117247;com.atollic.truestudio.configuration.release.625117247.;com.atollic.truestudio.exe.release.toolchain.gcc.280852752;com.atollic.truestudio.gcc.input.1319195644">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.atollic.truestudio.mbs.ARMToolsPerProjectProfileC"/>
+		</scannerConfigBuildInfo>
 	</storageModule>
-	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
 </cproject>

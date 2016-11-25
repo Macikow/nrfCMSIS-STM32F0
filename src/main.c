@@ -25,6 +25,7 @@
 #include <stddef.h>
 #include "stm32f0xx_rcc.h"
 #include "stm32f0xx_gpio.h"
+#include "uart.h"
 
 /* Private typedef */
 
@@ -87,10 +88,13 @@ int main(void)
   ii = SystemCoreClock;    /* This is a way to read the System core clock */
   ii = 0;
 
+
+
   /* GPIOA-C Periph clock enable */
   RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA, ENABLE);
   RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOB, ENABLE);
   RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOC, ENABLE);
+  initUart();
 
   /* Configure
    * PA0 USER Button input
@@ -118,13 +122,17 @@ int main(void)
   LED_PORT->BSRR = LED2;
   LED_PORT->BRR = LED2;
 
+
+
   while (1)
   {
+
+
 	  if (timerFlag)
 	  {
 		  timerFlag = 0;
 		  ii++;
-
+		  sendString("cos tam napisz");
 		  /* Toggle LED1 */
 		  if (ii == 1)
 		  {
