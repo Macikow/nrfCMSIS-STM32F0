@@ -26,44 +26,40 @@ void initUart(void)
 
 	// GPIO  init
 	//GPIO_PinAFConfig(GPIOA, USART1_TX, USART1);
-	GPIOA->AFR[1] = (1 << 4) | (1 << 8);
-	GPIO.GPIO_Mode = GPIO_Mode_AF;
-	GPIO.GPIO_Pin = USART1_TX;
+	GPIOA->AFR[1] = (1 << 4) | (1 << 8); // ok
+	GPIO.GPIO_Pin = USART1_TX | USART1_RX;
 	GPIO.GPIO_Speed = GPIO_Speed_50MHz;
-	GPIO_Init( GPIOA, &GPIO );
-	GPIO.GPIO_Mode = GPIO_Mode_IN;
-	GPIO.GPIO_Speed  = GPIO_Speed_50MHz;
-	GPIO.GPIO_Pin = USART1_RX;
-	GPIO_Init( GPIOA, &GPIO );
+	GPIO.GPIO_Mode = GPIO_Mode_AF;
+	GPIO.GPIO_OType = GPIO_OType_PP;
+	GPIO.GPIO_PuPd = GPIO_PuPd_UP;
+	GPIO_Init(GPIOA, &GPIO);
 	// USART1
-	USART_Cmd( USART1, ENABLE );
+
 
 	USART.USART_BaudRate = 9600;
 	USART.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
 	USART.USART_WordLength = USART_WordLength_8b;
 	USART.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
+	USART.USART_Parity = USART_Parity_No;
 	USART.USART_StopBits = USART_StopBits_1;
 	USART_Init(USART1, &USART);
+	USART_Cmd( USART1, ENABLE );
 
-	USART_ITConfig(USART1, USART_IT_RXNE, ENABLE);
+	//USART_ITConfig(USART1, USART_IT_RXNE, ENABLE);
 	    /* Enable USART1 global interrupt */
 	//NVIC_EnableIRQ(USART1_IRQn);
 
 }
 
-void sendChar(unsigned char data)
+void sendChar(uint8_t data)
 {
+	while (USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET);
 	USART1->TDR = data;
-}
 
+}
 void sendString(char* data)
 {
-	while(*data == '\0')
-	{
-		USART1->TDR = *(data++);
-		while(!(USART1->ISR & USART_ISR_TXE)) // TXCIE - transmission complete 7 bit
-		{
-			// do nothing - wiat
-		}
+	while(*data != '\0'){
+		sendChar(*data++);
 	}
 }

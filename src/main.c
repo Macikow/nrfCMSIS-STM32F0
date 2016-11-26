@@ -89,7 +89,6 @@ int main(void)
   ii = 0;
 
 
-
   /* GPIOA-C Periph clock enable */
   RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA, ENABLE);
   RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOB, ENABLE);
@@ -117,45 +116,18 @@ int main(void)
   GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
   GPIO_Init(LED_PORT, &GPIO_InitStructure);
 
-  GPIO_SetBits(LED_PORT, LED1);
-  GPIO_ResetBits(LED_PORT, LED1);
-  LED_PORT->BSRR = LED2;
-  LED_PORT->BRR = LED2;
 
 
+
+ sendString("napis\n");
+
+ GPIO_SetBits(LED_PORT, LED1);
 
   while (1)
   {
 
 
-	  if (timerFlag)
-	  {
-		  timerFlag = 0;
-		  ii++;
-		  sendString("cos tam napisz");
-		  /* Toggle LED1 */
-		  if (ii == 1)
-		  {
-			  LED_PORT->BSRR = LED1;
-		  }
-		  else if (ii == 2)
-		  {
-			  ii = 0;
-			  LED_PORT->BRR = LED1;
-		  }
-	  }
-      if(GPIO_ReadInputDataBit(KEY_PORT, KEY))
-	  {
-		  /* USER key pressed */
-		  if (ii == 1)
-		  {
-			  GPIO_SetBits(LED_PORT, LED2);
-		  }
-	  }
-	  else
-	  {
-		  GPIO_ResetBits(LED_PORT, LED2);
-	  }
+
   }
   return 0;
 }
